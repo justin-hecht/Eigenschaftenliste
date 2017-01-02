@@ -1,0 +1,11 @@
+- Darstellung in Listenform (der zu an. Eig.)
+- Neue Eig.
+- Hinzufügen bestehender Eig.
+- Entfernen von Eig.
+- Überprüfen an- und ausschalten
+- Listen speichern
+- Listen in korr. Format laden und editierens
+
+
+
+Funktionale Anforderungen
