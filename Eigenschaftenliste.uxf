@@ -4,8 +4,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1161</x>
-      <y>333</y>
+      <x>1692</x>
+      <y>216</y>
       <w>414</w>
       <h>207</h>
     </coordinates>
@@ -13,40 +13,37 @@
 {implements PropertiesDescriptionSrc, ResultDisplay,
 uses PostAndPrePropertyEditor}
 --
-- propertyDescriptions : PostAndPrePropertiesDescription[]
+- propertyDescriptions : ArrayList&lt;PropertyItem&gt;
 - propertyEditor : PostAndPrePropertyEditor
 --
-- getResult() : Result
 + &lt;&lt;constructor&gt;&gt; PropertyList(propEditor : PostAndPrePropertyEditor)
 + getDescriptions() : PostAndPrePropertiesDescription[]
-+ displayResult(res : Result)
-+ addDescription(descr : PostAndPrePropertiesDescription)
++ changeDescription(name : String)
++ changeName(newName : String, oldName : String)
++ addDescription(name : String)
 + newDescription()
-+ deleteDescription(descr : PostAndPrePropertiesDescription)
-+ changeTestedStatus(status : boolean)</panel_attributes>
++ deleteDescription(name : String)
++ changeTestedStatus(status : boolean, name : String)</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1161</x>
-      <y>621</y>
+      <x>2214</x>
+      <y>477</y>
       <w>414</w>
-      <h>207</h>
+      <h>162</h>
     </coordinates>
     <panel_attributes>PostAndPrePropertiesDescription
 {implements PostAndPrePropertiesDescription}
 --
-- name : String
 - preProps : PropertiesDescription[]
 - postProps : PropertiesDescription[]
 - symbolicVars : SymbolicVariable[]
-- willBeTested : boolean
 --
 + getPrePropertyDescriptions() : PropertiesDescription[]
 + getPostPropertyDescriptions() : PropertiesDescription[]
 + getSymbolicVars() : SymbolicVariable[]
-+ getName() : String
 + toString() : String
 + equals(obj : Object)</panel_attributes>
     <additional_attributes/>
@@ -54,8 +51,8 @@ uses PostAndPrePropertyEditor}
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1251</x>
-      <y>909</y>
+      <x>2304</x>
+      <y>747</y>
       <w>216</w>
       <h>72</h>
     </coordinates>
@@ -70,24 +67,24 @@ uses PostAndPrePropertyEditor}
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>108</x>
-      <y>333</y>
+      <x>207</x>
+      <y>216</y>
       <w>297</w>
       <h>81</h>
     </coordinates>
     <panel_attributes>ListWindow
 --
 - menu : JMenu
-- properties : PostAndPrePropertiesDescription[]
-- results : Result[]
+- items : ArrayList&lt;Container&gt;
+- addButton : JButton
 --</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>729</x>
-      <y>387</y>
+      <x>1143</x>
+      <y>270</y>
       <w>117</w>
       <h>36</h>
     </coordinates>
@@ -99,93 +96,94 @@ uses PostAndPrePropertyEditor}
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>675</x>
-      <y>495</y>
+      <x>1089</x>
+      <y>378</y>
       <w>234</w>
-      <h>54</h>
+      <h>81</h>
     </coordinates>
     <panel_attributes>/ListChangeCommand/
 --
+- listener : ListChangeCommandListener
 --
-/+ execute()/</panel_attributes>
+/- execute()/
+- updateListWindow()</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>396</x>
-      <y>693</y>
-      <w>162</w>
-      <h>72</h>
+      <x>981</x>
+      <y>576</y>
+      <w>144</w>
+      <h>54</h>
     </coordinates>
     <panel_attributes>addStandardDescription
 --
-- getStandardDescription(e)
 --
-+ execute()</panel_attributes>
+- execute()</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>585</x>
-      <y>693</y>
-      <w>162</w>
+      <x>1143</x>
+      <y>576</y>
+      <w>126</w>
       <h>54</h>
     </coordinates>
     <panel_attributes>addDescription
 --
 --
-+ execute()</panel_attributes>
+- execute()</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>963</x>
-      <y>693</y>
-      <w>162</w>
+      <x>1431</x>
+      <y>576</y>
+      <w>126</w>
       <h>54</h>
     </coordinates>
     <panel_attributes>changeTestedStatus
 --
 --
-+ execute()</panel_attributes>
+- execute()</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>774</x>
-      <y>693</y>
-      <w>162</w>
+      <x>1287</x>
+      <y>576</y>
+      <w>126</w>
       <h>54</h>
     </coordinates>
     <panel_attributes>deleteDescription
 --
 --
-+ execute()</panel_attributes>
+- execute()</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>378</x>
-      <y>495</y>
-      <w>198</w>
+      <x>828</x>
+      <y>378</y>
+      <w>207</w>
       <h>45</h>
     </coordinates>
     <panel_attributes>ListChangeCommandListener
 --
 --
-- actionPerformed(ActionEvent e)</panel_attributes>
+- actionPerformed(e : ActionEvent)</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>1656</x>
-      <y>477</y>
+      <x>2205</x>
+      <y>360</y>
       <w>261</w>
       <h>45</h>
     </coordinates>
@@ -196,31 +194,31 @@ propertyEditor = new PostAndPropertyEditor</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1530</x>
-      <y>486</y>
-      <w>144</w>
+      <x>2016</x>
+      <y>369</y>
+      <w>207</w>
       <h>27</h>
     </coordinates>
     <panel_attributes>lt=.()</panel_attributes>
-    <additional_attributes>140.0;10.0;10.0;10.0</additional_attributes>
+    <additional_attributes>210.0;10.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>468</x>
-      <y>774</y>
+      <x>999</x>
+      <y>657</y>
       <w>216</w>
       <h>45</h>
     </coordinates>
     <panel_attributes>
-PropertyList.addDescription(e)</panel_attributes>
+PropertyList.addDescription()</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>495</x>
-      <y>828</y>
+      <x>1026</x>
+      <y>711</y>
       <w>216</w>
       <h>45</h>
     </coordinates>
@@ -231,65 +229,43 @@ PropertyList.newDescription()</panel_attributes>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>819</x>
-      <y>774</y>
+      <x>1305</x>
+      <y>657</y>
       <w>216</w>
       <h>45</h>
     </coordinates>
     <panel_attributes>
-PropertyList.deleteDescription(e)</panel_attributes>
+PropertyList.deleteDescription()</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>855</x>
-      <y>828</y>
+      <x>1323</x>
+      <y>711</y>
       <w>216</w>
       <h>45</h>
     </coordinates>
     <panel_attributes>
-PropertyList.changeTestedStatus(e)</panel_attributes>
+PropertyList.changeTestedStatus()</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>459</x>
-      <y>648</y>
-      <w>612</w>
+      <x>756</x>
+      <y>531</y>
+      <w>774</w>
       <h>27</h>
     </coordinates>
     <panel_attributes>lt=-</panel_attributes>
-    <additional_attributes>10.0;10.0;660.0;10.0</additional_attributes>
+    <additional_attributes>10.0;10.0;840.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>531</x>
-      <y>738</y>
-      <w>27</w>
-      <h>54</h>
-    </coordinates>
-    <panel_attributes>lt=.()</panel_attributes>
-    <additional_attributes>10.0;40.0;10.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>684</x>
-      <y>720</y>
-      <w>27</w>
-      <h>126</h>
-    </coordinates>
-    <panel_attributes>lt=.()</panel_attributes>
-    <additional_attributes>10.0;120.0;10.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>909</x>
-      <y>720</y>
+      <x>1062</x>
+      <y>603</y>
       <w>27</w>
       <h>72</h>
     </coordinates>
@@ -299,8 +275,8 @@ PropertyList.changeTestedStatus(e)</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1044</x>
-      <y>720</y>
+      <x>1224</x>
+      <y>603</y>
       <w>27</w>
       <h>126</h>
     </coordinates>
@@ -310,30 +286,52 @@ PropertyList.changeTestedStatus(e)</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>837</x>
-      <y>396</y>
-      <w>342</w>
-      <h>27</h>
+      <x>1386</x>
+      <y>603</y>
+      <w>27</w>
+      <h>72</h>
     </coordinates>
-    <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;360.0;10.0</additional_attributes>
+    <panel_attributes>lt=.()</panel_attributes>
+    <additional_attributes>10.0;60.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>396</x>
-      <y>396</y>
-      <w>351</w>
-      <h>27</h>
+      <x>1521</x>
+      <y>603</y>
+      <w>27</w>
+      <h>126</h>
     </coordinates>
-    <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;370.0;10.0</additional_attributes>
+    <panel_attributes>lt=.()</panel_attributes>
+    <additional_attributes>10.0;120.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>774</x>
-      <y>414</y>
+      <x>1251</x>
+      <y>279</y>
+      <w>459</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;490.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>495</x>
+      <y>279</y>
+      <w>666</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;720.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1188</x>
+      <y>297</y>
       <w>27</w>
       <h>99</h>
     </coordinates>
@@ -343,19 +341,19 @@ PropertyList.changeTestedStatus(e)</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>774</x>
-      <y>540</y>
+      <x>1188</x>
+      <y>450</y>
       <w>27</w>
-      <h>135</h>
+      <h>108</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;130.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;100.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>459</x>
-      <y>648</y>
+      <x>1053</x>
+      <y>531</y>
       <w>27</w>
       <h>63</h>
     </coordinates>
@@ -365,8 +363,8 @@ PropertyList.changeTestedStatus(e)</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>657</x>
-      <y>648</y>
+      <x>1188</x>
+      <y>531</y>
       <w>27</w>
       <h>63</h>
     </coordinates>
@@ -376,8 +374,8 @@ PropertyList.changeTestedStatus(e)</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>855</x>
-      <y>648</y>
+      <x>1323</x>
+      <y>531</y>
       <w>27</w>
       <h>63</h>
     </coordinates>
@@ -387,8 +385,8 @@ PropertyList.changeTestedStatus(e)</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1044</x>
-      <y>648</y>
+      <x>1503</x>
+      <y>531</y>
       <w>27</w>
       <h>63</h>
     </coordinates>
@@ -398,19 +396,8 @@ PropertyList.changeTestedStatus(e)</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>414</x>
-      <y>756</y>
-      <w>27</w>
-      <h>180</h>
-    </coordinates>
-    <panel_attributes>lt=-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;180.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>720</x>
-      <y>738</y>
+      <x>981</x>
+      <y>621</y>
       <w>27</w>
       <h>198</h>
     </coordinates>
@@ -420,8 +407,8 @@ PropertyList.changeTestedStatus(e)</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>783</x>
-      <y>738</y>
+      <x>1251</x>
+      <y>621</y>
       <w>27</w>
       <h>198</h>
     </coordinates>
@@ -431,8 +418,8 @@ PropertyList.changeTestedStatus(e)</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1098</x>
-      <y>738</y>
+      <x>1287</x>
+      <y>621</y>
       <w>27</w>
       <h>198</h>
     </coordinates>
@@ -442,79 +429,55 @@ PropertyList.changeTestedStatus(e)</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>414</x>
-      <y>909</y>
-      <w>747</w>
-      <h>27</h>
+      <x>1539</x>
+      <y>621</y>
+      <w>27</w>
+      <h>198</h>
     </coordinates>
     <panel_attributes>lt=-</panel_attributes>
-    <additional_attributes>10.0;10.0;810.0;10.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;200.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1134</x>
-      <y>423</y>
-      <w>27</w>
-      <h>513</h>
+      <x>675</x>
+      <y>324</y>
+      <w>1035</w>
+      <h>495</h>
     </coordinates>
     <panel_attributes>lt=-
 </panel_attributes>
-    <additional_attributes>10.0;550.0;10.0;10.0</additional_attributes>
+    <additional_attributes>10.0;530.0;1000.0;530.0;1000.0;10.0;1130.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1134</x>
-      <y>423</y>
-      <w>45</w>
-      <h>27</h>
-    </coordinates>
-    <panel_attributes>lt=-</panel_attributes>
-    <additional_attributes>10.0;10.0;30.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>1341</x>
-      <y>531</y>
+      <x>2394</x>
+      <y>630</y>
       <w>27</w>
-      <h>108</h>
+      <h>135</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;100.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>1341</x>
-      <y>819</y>
-      <w>27</w>
-      <h>108</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;100.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;130.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>189</x>
-      <y>495</y>
-      <w>90</w>
-      <h>63</h>
+      <x>495</x>
+      <y>504</y>
+      <w>144</w>
+      <h>36</h>
     </coordinates>
-    <panel_attributes>JButton
+    <panel_attributes>_deleteButton : JButton_
 --
---
-+ getSource()
-+ setSource()</panel_attributes>
+--</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>225</x>
-      <y>405</y>
+      <x>234</x>
+      <y>288</y>
       <w>27</w>
       <h>108</h>
     </coordinates>
@@ -524,34 +487,23 @@ PropertyList.changeTestedStatus(e)</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>270</x>
-      <y>495</y>
-      <w>126</w>
+      <x>1026</x>
+      <y>378</y>
+      <w>81</w>
       <h>27</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;120.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>567</x>
-      <y>495</y>
-      <w>126</w>
-      <h>27</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;120.0;10.0</additional_attributes>
+    <additional_attributes>10.0;10.0;70.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>666</x>
-      <y>288</y>
+      <x>1089</x>
+      <y>81</y>
       <w>252</w>
       <h>63</h>
     </coordinates>
-    <panel_attributes>SaverLoaderOfPropertyList
+    <panel_attributes>SaverLoaderHandler
 --
 --
 + loadPropertyList()
@@ -561,12 +513,397 @@ PropertyList.changeTestedStatus(e)</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>909</x>
+      <x>1332</x>
+      <y>126</y>
+      <w>378</w>
+      <h>117</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;250.0;10.0;250.0;110.0;400.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>1611</x>
+      <y>0</y>
+      <w>1044</w>
+      <h>855</h>
+    </coordinates>
+    <panel_attributes>Model</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>0</x>
+      <y>0</y>
+      <w>648</w>
+      <h>855</h>
+    </coordinates>
+    <panel_attributes>View</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>657</x>
+      <y>0</y>
+      <w>945</w>
+      <h>855</h>
+    </coordinates>
+    <panel_attributes>Controller</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>189</x>
+      <y>504</y>
+      <w>144</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>_: JCheckBox_
+--
+- willBeTested : boolean
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>36</x>
+      <y>504</y>
+      <w>144</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>_: JLabel_
+--
+- name : String
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>342</x>
+      <y>504</y>
+      <w>144</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>_changeButton : JButton_
+--
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>198</x>
+      <y>378</y>
+      <w>90</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>_: Container_
+--
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>234</x>
+      <y>405</y>
+      <w>27</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>81</x>
+      <y>450</y>
+      <w>27</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;60.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>81</x>
+      <y>450</y>
+      <w>477</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>510.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>234</x>
+      <y>450</y>
+      <w>27</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;60.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>531</x>
+      <y>450</y>
+      <w>27</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;60.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>405</x>
+      <y>450</y>
+      <w>27</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;60.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>333</x>
       <y>333</y>
-      <w>270</w>
+      <w>144</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>_addButton : JButton_
+--
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>387</x>
+      <y>288</y>
+      <w>27</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>279</x>
+      <y>387</y>
+      <w>567</w>
       <h>27</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;280.0;10.0</additional_attributes>
+    <additional_attributes>10.0;10.0;610.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>468</x>
+      <y>342</y>
+      <w>378</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;320.0;10.0;320.0;60.0;400.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1692</x>
+      <y>477</y>
+      <w>414</w>
+      <h>162</h>
+    </coordinates>
+    <panel_attributes>PropertyItem
+--
+- name : String
+- description : PostAndPrePropertiesDescription
+- willBeTested : boolean
+--
++ getName() : String
++ getDescription() : PostAndPrePropertiesDescription
++ willBeTested() : boolean
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>819</x>
+      <y>576</y>
+      <w>144</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>changeDescriptionName
+--
+--
+- execute()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>900</x>
+      <y>531</y>
+      <w>27</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;50.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>720</x>
+      <y>711</y>
+      <w>216</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>
+PropertyList.changeName()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>936</x>
+      <y>621</y>
+      <w>27</w>
+      <h>198</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;200.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>918</x>
+      <y>603</y>
+      <w>27</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>lt=.()</panel_attributes>
+    <additional_attributes>10.0;120.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1107</x>
+      <y>189</y>
+      <w>207</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>ResultHandler
+--
+--
+- getResult() : Result
++ displayResult(res : Result)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1305</x>
+      <y>225</y>
+      <w>405</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;430.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>675</x>
+      <y>576</y>
+      <w>126</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>changeDescription
+--
+--
+- execute()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>756</x>
+      <y>531</y>
+      <w>27</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;50.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>702</x>
+      <y>657</y>
+      <w>216</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>
+PropertyList.changeName()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>774</x>
+      <y>603</y>
+      <w>27</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=.()</panel_attributes>
+    <additional_attributes>10.0;60.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>675</x>
+      <y>621</y>
+      <w>27</w>
+      <h>198</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;200.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2097</x>
+      <y>477</y>
+      <w>135</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>130.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1872</x>
+      <y>414</y>
+      <w>27</w>
+      <h>81</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
   </element>
 </diagram>
