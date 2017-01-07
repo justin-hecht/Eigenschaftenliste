@@ -681,11 +681,11 @@ PropertyList.changeTestedStatus()</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>117</x>
-      <y>288</y>
+      <y>315</y>
       <w>207</w>
       <h>45</h>
     </coordinates>
-    <panel_attributes>_addButton : JButton_
+    <panel_attributes>_addStandardButton : JButton_
 --
 --
 - actionPerformed(e : ActionEvent)</panel_attributes>
@@ -697,21 +697,21 @@ PropertyList.changeTestedStatus()</panel_attributes>
       <x>198</x>
       <y>234</y>
       <w>27</w>
-      <h>72</h>
+      <h>99</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>153</x>
-      <y>405</y>
+      <y>396</y>
       <w>648</w>
-      <h>108</h>
+      <h>126</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>10.0;100.0;520.0;100.0;520.0;10.0;700.0;10.0</additional_attributes>
+    <additional_attributes>10.0;120.0;520.0;120.0;520.0;10.0;700.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
@@ -914,7 +914,7 @@ PropertyList.changeName()</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>135</x>
-      <y>369</y>
+      <y>405</y>
       <w>144</w>
       <h>36</h>
     </coordinates>
@@ -927,7 +927,7 @@ PropertyList.changeName()</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>378</x>
-      <y>432</y>
+      <y>450</y>
       <w>207</w>
       <h>36</h>
     </coordinates>
@@ -940,22 +940,22 @@ PropertyList.changeName()</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>198</x>
-      <y>324</y>
+      <y>351</y>
       <w>27</w>
-      <h>63</h>
+      <h>72</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>10.0;50.0;10.0;10.0</additional_attributes>
+    <additional_attributes>10.0;60.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>405</x>
-      <y>315</y>
-      <w>162</w>
+      <x>342</x>
+      <y>297</y>
+      <w>180</w>
       <h>36</h>
     </coordinates>
-    <panel_attributes>_addDescription : JButton_
+    <panel_attributes>_addNewDescription : JButton_
 --
 --</panel_attributes>
     <additional_attributes/>
@@ -976,24 +976,13 @@ PropertyList.changeName()</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>558</x>
-      <y>315</y>
-      <w>243</w>
-      <h>99</h>
+      <x>513</x>
+      <y>297</y>
+      <w>288</w>
+      <h>108</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;70.0;10.0;70.0;90.0;250.0;90.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>270</x>
-      <y>315</y>
-      <w>153</w>
-      <h>90</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;80.0;80.0;80.0;80.0;10.0;150.0;10.0</additional_attributes>
+    <additional_attributes>10.0;10.0;240.0;10.0;240.0;100.0;300.0;100.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
@@ -1001,21 +990,21 @@ PropertyList.changeName()</panel_attributes>
       <x>270</x>
       <y>378</y>
       <w>126</w>
-      <h>27</h>
+      <h>63</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;120.0;10.0</additional_attributes>
+    <additional_attributes>10.0;50.0;80.0;50.0;80.0;10.0;120.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>270</x>
-      <y>378</y>
+      <y>414</y>
       <w>126</w>
-      <h>81</h>
+      <h>63</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;80.0;10.0;80.0;70.0;120.0;70.0</additional_attributes>
+    <additional_attributes>10.0;10.0;80.0;10.0;80.0;50.0;120.0;50.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
@@ -1039,5 +1028,16 @@ PropertyList.changeName()</panel_attributes>
     <panel_attributes>perform();
 updateListWindow();</panel_attributes>
     <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>342</x>
+      <y>234</y>
+      <w>27</w>
+      <h>81</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
   </element>
 </diagram>
