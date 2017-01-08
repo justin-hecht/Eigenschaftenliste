@@ -528,7 +528,7 @@ PropertyList.changeTestedStatus()</panel_attributes>
     <coordinates>
       <x>1432</x>
       <y>0</y>
-      <w>1160</w>
+      <w>960</w>
       <h>760</h>
     </coordinates>
     <panel_attributes>Model</panel_attributes>
