@@ -7,10 +7,10 @@
       <x>1496</x>
       <y>544</y>
       <w>368</w>
-      <h>184</h>
+      <h>192</h>
     </coordinates>
     <panel_attributes>PropertyList
-{implements PropertiesDescriptionSrc, ResultDisplay,
+{implements PropertiesDescriptionSrc, ResultPresenter,
 uses PostAndPrePropertyEditor}
 --
 - propertyDescriptions : ArrayList&lt;PropertyItem&gt;
@@ -23,7 +23,8 @@ uses PostAndPrePropertyEditor}
 + addStandardDescription(name : String)
 + newDescription()
 + deleteDescription(name : String)
-+ changeTestedStatus(status : bool, name : String)</panel_attributes>
++ changeTestedStatus(status : bool, name : String)
++ presentResultOfCheck(res : Result)</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -97,7 +98,7 @@ uses PostAndPrePropertyEditor}
     <id>UMLClass</id>
     <coordinates>
       <x>968</x>
-      <y>336</y>
+      <y>328</y>
       <w>208</w>
       <h>80</h>
     </coordinates>
@@ -302,10 +303,10 @@ PropertyList.changeTestedStatus()</panel_attributes>
       <x>1352</x>
       <y>536</y>
       <w>24</w>
-      <h>112</h>
+      <h>128</h>
     </coordinates>
     <panel_attributes>lt=.()</panel_attributes>
-    <additional_attributes>10.0;120.0;10.0;10.0</additional_attributes>
+    <additional_attributes>10.0;140.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
@@ -335,21 +336,21 @@ PropertyList.changeTestedStatus()</panel_attributes>
       <x>1056</x>
       <y>264</y>
       <w>24</w>
-      <h>88</h>
+      <h>80</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>1056</x>
-      <y>408</y>
+      <y>400</y>
       <w>24</w>
-      <h>88</h>
+      <h>96</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;100.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
@@ -466,7 +467,7 @@ PropertyList.changeTestedStatus()</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>440</x>
-      <y>568</y>
+      <y>624</y>
       <w>128</w>
       <h>32</h>
     </coordinates>
@@ -528,7 +529,7 @@ PropertyList.changeTestedStatus()</panel_attributes>
     <coordinates>
       <x>1432</x>
       <y>0</y>
-      <w>960</w>
+      <w>1160</w>
       <h>760</h>
     </coordinates>
     <panel_attributes>Model</panel_attributes>
@@ -560,7 +561,7 @@ PropertyList.changeTestedStatus()</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>168</x>
-      <y>568</y>
+      <y>624</y>
       <w>128</w>
       <h>32</h>
     </coordinates>
@@ -573,7 +574,7 @@ PropertyList.changeTestedStatus()</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>32</x>
-      <y>568</y>
+      <y>624</y>
       <w>128</w>
       <h>32</h>
     </coordinates>
@@ -586,7 +587,7 @@ PropertyList.changeTestedStatus()</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>304</x>
-      <y>568</y>
+      <y>624</y>
       <w>128</w>
       <h>32</h>
     </coordinates>
@@ -598,46 +599,54 @@ PropertyList.changeTestedStatus()</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>32</x>
+      <x>8</x>
       <y>400</y>
-      <w>112</w>
-      <h>72</h>
+      <w>216</w>
+      <h>176</h>
     </coordinates>
     <panel_attributes>ListItem
-{extends Container}
+{extends Container,
+implements ResultPresenterElement}
 --
 - name : String
 - testStatus : bool
---</panel_attributes>
+--
++ presentTimeout()
++ presentSuccess()
++ presentFailure()
++ presentFailureExample(votes : Votes[*],
+candidates : Candidate[*],
+seats : Seat [*],
+result : ElectionResults[*])</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>72</x>
-      <y>464</y>
-      <w>232</w>
-      <h>88</h>
+      <x>216</x>
+      <y>504</y>
+      <w>88</w>
+      <h>96</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;60.0;270.0;60.0;270.0;90.0</additional_attributes>
+    <additional_attributes>10.0;10.0;90.0;10.0;90.0;100.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>72</x>
-      <y>528</y>
+      <y>576</y>
       <w>24</w>
-      <h>56</h>
+      <h>64</h>
     </coordinates>
     <panel_attributes>lt=-</panel_attributes>
-    <additional_attributes>10.0;50.0;10.0;10.0</additional_attributes>
+    <additional_attributes>10.0;60.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>72</x>
-      <y>528</y>
+      <y>576</y>
       <w>424</w>
       <h>24</h>
     </coordinates>
@@ -648,34 +657,34 @@ PropertyList.changeTestedStatus()</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>208</x>
-      <y>528</y>
+      <y>576</y>
       <w>24</w>
-      <h>56</h>
+      <h>64</h>
     </coordinates>
     <panel_attributes>lt=-</panel_attributes>
-    <additional_attributes>10.0;50.0;10.0;10.0</additional_attributes>
+    <additional_attributes>10.0;60.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>472</x>
-      <y>528</y>
+      <y>576</y>
       <w>24</w>
-      <h>56</h>
+      <h>64</h>
     </coordinates>
     <panel_attributes>lt=-</panel_attributes>
-    <additional_attributes>10.0;50.0;10.0;10.0</additional_attributes>
+    <additional_attributes>10.0;60.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>360</x>
-      <y>528</y>
+      <y>576</y>
       <w>24</w>
-      <h>56</h>
+      <h>64</h>
     </coordinates>
     <panel_attributes>lt=-</panel_attributes>
-    <additional_attributes>10.0;50.0;10.0;10.0</additional_attributes>
+    <additional_attributes>10.0;60.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
@@ -705,13 +714,13 @@ PropertyList.changeTestedStatus()</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>136</x>
+      <x>216</x>
       <y>352</y>
-      <w>576</w>
+      <w>496</w>
       <h>112</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>10.0;120.0;520.0;120.0;520.0;10.0;700.0;10.0</additional_attributes>
+    <additional_attributes>10.0;120.0;420.0;120.0;420.0;10.0;600.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
@@ -808,29 +817,29 @@ PropertyList.changeName()</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1224</x>
-      <y>80</y>
-      <w>184</w>
+      <x>1200</x>
+      <y>88</y>
+      <w>208</w>
       <h>72</h>
     </coordinates>
     <panel_attributes>ResultHandler
-{implements ResultDisplay}
+{implements ResultPresenter}
 --
 --
 - getResult() : Result
-+ displayResult(res : Result)</panel_attributes>
++ presentResultOfCheck(res : Result)</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>1400</x>
-      <y>112</y>
+      <y>120</y>
       <w>128</w>
-      <h>448</h>
+      <h>440</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;140.0;10.0;140.0;540.0</additional_attributes>
+    <additional_attributes>10.0;10.0;140.0;10.0;140.0;530.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
@@ -1013,18 +1022,18 @@ PropertyList.changeName()</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>1152</x>
-      <y>368</y>
-      <w>72</w>
+      <y>360</y>
+      <w>64</w>
       <h>24</h>
     </coordinates>
     <panel_attributes>lt=.()</panel_attributes>
-    <additional_attributes>70.0;10.0;10.0;10.0</additional_attributes>
+    <additional_attributes>60.0;10.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>1208</x>
-      <y>368</y>
+      <x>1200</x>
+      <y>360</y>
       <w>112</w>
       <h>40</h>
     </coordinates>
@@ -1046,191 +1055,50 @@ updateListWindow();</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1656</x>
-      <y>32</y>
-      <w>184</w>
-      <h>160</h>
+      <x>1584</x>
+      <y>72</y>
+      <w>288</w>
+      <h>72</h>
     </coordinates>
     <panel_attributes>Result
-{implements ResultPresentable}
+{implements Result}
 --
-- checkSuccess : boolean
-- propertyFulfilled : boolean
-- electSet: ArrayList&lt;ElectionData&gt;
 --
-+ presentOk()
-+ presentFailure()
-+ presentExample(votes : Votes[*],
-candidates : Candidate[*],
-seats : Seat [*],
-result : ElectionResults[*])</panel_attributes>
++ isFinished() : Boolean
++ presentTo(resPresentElem : ResultPresenterElement)</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>1728</x>
-      <y>184</y>
+      <y>136</y>
       <w>24</w>
-      <h>168</h>
+      <h>216</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;190.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;250.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>1400</x>
-      <y>96</y>
-      <w>272</w>
+      <y>104</y>
+      <w>200</w>
       <h>24</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>320.0;10.0;10.0;10.0</additional_attributes>
+    <additional_attributes>230.0;10.0;10.0;10.0</additional_attributes>
   </element>
   <element>
-    <id>UMLClass</id>
+    <id>Relation</id>
     <coordinates>
-      <x>1976</x>
+      <x>24</x>
       <y>72</y>
-      <w>128</w>
-      <h>96</h>
+      <w>1576</w>
+      <h>344</h>
     </coordinates>
-    <panel_attributes>&lt;&lt;Interface&gt;&gt;
-ElectionData
---
---
-/+ getVotes()/
-/+ getCandidates()/
-/+ getSeats()/
-/+ getElectionResult()/</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>1832</x>
-      <y>112</y>
-      <w>160</w>
-      <h>24</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;180.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>1760</x>
-      <y>232</y>
-      <w>128</w>
-      <h>80</h>
-    </coordinates>
-    <panel_attributes>WeightedElection
---
-- votes : int[*][*]
-- candidates : int
-- seats : int
-- result : int[*]
---
-</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>1904</x>
-      <y>232</y>
-      <w>128</w>
-      <h>80</h>
-    </coordinates>
-    <panel_attributes>ApprovalElection
---
-- votes : int[*]
-- candidates : int
-- seats : int
-- result : int[*]
---
-</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>2048</x>
-      <y>232</y>
-      <w>128</w>
-      <h>80</h>
-    </coordinates>
-    <panel_attributes>SimpleElection
---
-- votes : int[*]
-- candidates : int
-- seats : int
-- result : int[*]
---
-</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>2192</x>
-      <y>232</y>
-      <w>128</w>
-      <h>80</h>
-    </coordinates>
-    <panel_attributes>STVElection
---
-- votes : int[*][*]
-- candidates : int
-- seats : int
-- result : int[*]
---
-</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>1864</x>
-      <y>160</y>
-      <w>144</w>
-      <h>88</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
-    <additional_attributes>160.0;10.0;160.0;30.0;10.0;30.0;10.0;90.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>2008</x>
-      <y>160</y>
-      <w>24</w>
-      <h>88</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>2056</x>
-      <y>160</y>
-      <w>24</w>
-      <h>88</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>2080</x>
-      <y>160</y>
-      <w>144</w>
-      <h>88</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;30.0;160.0;30.0;160.0;90.0</additional_attributes>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;410.0;10.0;10.0;1950.0;10.0</additional_attributes>
   </element>
 </diagram>
