@@ -4,7 +4,7 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1928</x>
+      <x>2272</x>
       <y>0</y>
       <w>232</w>
       <h>56</h>
@@ -20,7 +20,7 @@ ParameterSource
     <id>UMLClass</id>
     <coordinates>
       <x>0</x>
-      <y>456</y>
+      <y>424</y>
       <w>200</w>
       <h>56</h>
     </coordinates>
@@ -34,10 +34,10 @@ CheckStartStopNotifier
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>288</x>
+      <x>632</x>
       <y>424</y>
-      <w>264</w>
-      <h>104</h>
+      <w>288</w>
+      <h>120</h>
     </coordinates>
     <panel_attributes>ParameterWindow
 {implements CheckStartStopNotifier}
@@ -46,6 +46,7 @@ CheckStartStopNotifier
 - timeoutNumber : JSpinner
 - timeoutUnit : JComboBox
 --
++ &lt;&lt;constructor&gt;&gt; ParameterWindow(p : ParameterEditor)
 - openAdvancedDialog()
 + addCheckListener(I : CheckListener)</panel_attributes>
     <additional_attributes/>
@@ -53,16 +54,19 @@ CheckStartStopNotifier
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1904</x>
-      <y>432</y>
+      <x>2248</x>
+      <y>392</y>
       <w>264</w>
-      <h>96</h>
+      <h>136</h>
     </coordinates>
     <panel_attributes>ParameterEditor
 {extends ParameterSource}
 --
+_- instance : ParameterEditor_
 - parameters : ElectionCheckParameter
 --
+- &lt;&lt;constructor&gt;&gt; ParameterEditor()
+_+ getInstance() : ParameterEditor_
 + getParameter() : ElectionCheckParameter
 + setParameter(param : int, newValue : int)
 + setArguments(newArguments : String)</panel_attributes>
@@ -71,7 +75,7 @@ CheckStartStopNotifier
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1024</x>
+      <x>1368</x>
       <y>480</y>
       <w>184</w>
       <h>56</h>
@@ -86,14 +90,13 @@ CheckStartStopNotifier
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1336</x>
+      <x>1680</x>
       <y>480</y>
       <w>192</w>
-      <h>56</h>
+      <h>48</h>
     </coordinates>
     <panel_attributes>ValueChanger
 --
-- listener : ValueChangeListener
 --
 - change(param : int, newValue : int)</panel_attributes>
     <additional_attributes/>
@@ -101,7 +104,7 @@ CheckStartStopNotifier
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1520</x>
+      <x>1864</x>
       <y>440</y>
       <w>400</w>
       <h>80</h>
@@ -113,20 +116,20 @@ changes_parameter_in &gt;</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2040</x>
+      <x>2384</x>
       <y>48</y>
       <w>24</w>
-      <h>400</h>
+      <h>360</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;480.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;430.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>424</x>
+      <x>816</x>
       <y>296</y>
-      <w>160</w>
+      <w>112</w>
       <h>32</h>
     </coordinates>
     <panel_attributes>_startButton : JButton_
@@ -137,9 +140,9 @@ changes_parameter_in &gt;</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>248</x>
+      <x>696</x>
       <y>296</y>
-      <w>160</w>
+      <w>112</w>
       <h>32</h>
     </coordinates>
     <panel_attributes>_stopButton : JButton_
@@ -150,19 +153,7 @@ changes_parameter_in &gt;</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>336</x>
-      <y>320</y>
-      <w>184</w>
-      <h>120</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
-m2=1</panel_attributes>
-    <additional_attributes>210.0;130.0;210.0;80.0;10.0;80.0;10.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>480</x>
+      <x>736</x>
       <y>320</y>
       <w>40</w>
       <h>120</h>
@@ -174,19 +165,31 @@ m2=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>544</x>
+      <x>752</x>
+      <y>320</y>
+      <w>144</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m2=1</panel_attributes>
+    <additional_attributes>10.0;130.0;10.0;80.0;160.0;80.0;160.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>912</x>
       <y>488</y>
-      <w>496</w>
+      <w>472</w>
       <h>32</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 &lt; listens_to</panel_attributes>
-    <additional_attributes>10.0;20.0;600.0;20.0</additional_attributes>
+    <additional_attributes>10.0;20.0;570.0;20.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1024</x>
+      <x>1368</x>
       <y>232</y>
       <w>184</w>
       <h>40</h>
@@ -200,32 +203,32 @@ m2=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>544</x>
+      <x>912</x>
       <y>264</y>
-      <w>592</w>
+      <w>568</w>
       <h>200</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 &lt; listens_to</panel_attributes>
-    <additional_attributes>10.0;230.0;720.0;230.0;720.0;10.0</additional_attributes>
+    <additional_attributes>10.0;230.0;690.0;230.0;690.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>192</x>
-      <y>472</y>
-      <w>112</w>
+      <y>440</y>
+      <w>456</w>
       <h>24</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
-    <additional_attributes>10.0;10.0;120.0;10.0</additional_attributes>
+    <additional_attributes>10.0;10.0;550.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>216</x>
+      <x>224</x>
       <y>72</y>
-      <w>768</w>
+      <w>1104</w>
       <h>760</h>
     </coordinates>
     <panel_attributes>View</panel_attributes>
@@ -234,7 +237,7 @@ m2=1</panel_attributes>
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>992</x>
+      <x>1336</x>
       <y>72</y>
       <w>840</w>
       <h>760</h>
@@ -245,7 +248,7 @@ m2=1</panel_attributes>
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>1840</x>
+      <x>2184</x>
       <y>72</y>
       <w>512</w>
       <h>760</h>
@@ -256,7 +259,7 @@ m2=1</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1040</x>
+      <x>1384</x>
       <y>24</y>
       <w>184</w>
       <h>24</h>
@@ -267,7 +270,7 @@ m2=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1112</x>
+      <x>1456</x>
       <y>40</y>
       <w>72</w>
       <h>208</h>
@@ -279,7 +282,7 @@ notifies ^</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1904</x>
+      <x>2248</x>
       <y>600</y>
       <w>264</w>
       <h>88</h>
@@ -297,7 +300,7 @@ notifies ^</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2008</x>
+      <x>2352</x>
       <y>744</y>
       <w>72</w>
       <h>32</h>
@@ -310,7 +313,7 @@ notifies ^</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2032</x>
+      <x>2376</x>
       <y>680</y>
       <w>24</w>
       <h>80</h>
@@ -321,7 +324,7 @@ notifies ^</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1024</x>
+      <x>1368</x>
       <y>568</y>
       <w>184</w>
       <h>56</h>
@@ -336,26 +339,25 @@ notifies ^</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>544</x>
+      <x>912</x>
       <y>512</y>
-      <w>536</w>
+      <w>512</w>
       <h>104</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 &lt; listens_to</panel_attributes>
-    <additional_attributes>10.0;10.0;580.0;10.0;580.0;110.0;600.0;110.0</additional_attributes>
+    <additional_attributes>10.0;10.0;550.0;10.0;550.0;110.0;570.0;110.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1336</x>
+      <x>1680</x>
       <y>568</y>
       <w>192</w>
-      <h>56</h>
+      <h>48</h>
     </coordinates>
     <panel_attributes>ArgumentChanger
 --
-- listener : AdvancedListener
 --
 - change(newArguments : String)</panel_attributes>
     <additional_attributes/>
@@ -363,58 +365,60 @@ notifies ^</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1520</x>
+      <x>1864</x>
       <y>480</y>
-      <w>416</w>
+      <w>400</w>
       <h>120</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 changes_arguments_in &gt;</panel_attributes>
-    <additional_attributes>480.0;10.0;340.0;10.0;340.0;130.0;10.0;130.0</additional_attributes>
+    <additional_attributes>480.0;10.0;220.0;10.0;220.0;130.0;10.0;130.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1352</x>
-      <y>304</y>
-      <w>256</w>
-      <h>56</h>
+      <x>1680</x>
+      <y>288</y>
+      <w>280</w>
+      <h>80</h>
     </coordinates>
     <panel_attributes>SaverLoaderHandler
 --
 --
 + loadProject()
-+ saveProject(params : ElectionCheckParameter)</panel_attributes>
++ saveProject(params : ElectionCheckParameter)
++ loadParameters()
++ saveParameters(params : ElectionCheckParameter)</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1600</x>
+      <x>1952</x>
       <y>320</y>
-      <w>320</w>
+      <w>312</w>
       <h>136</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 gets_parameters_from &gt;</panel_attributes>
-    <additional_attributes>380.0;150.0;110.0;150.0;110.0;10.0;10.0;10.0</additional_attributes>
+    <additional_attributes>370.0;150.0;100.0;150.0;100.0;10.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>544</x>
+      <x>912</x>
       <y>336</y>
-      <w>824</w>
+      <w>784</w>
       <h>144</h>
     </coordinates>
     <panel_attributes>lt=-&gt;
 starts &gt;</panel_attributes>
-    <additional_attributes>10.0;160.0;860.0;160.0;860.0;10.0;1010.0;10.0</additional_attributes>
+    <additional_attributes>10.0;160.0;830.0;160.0;830.0;10.0;960.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>608</x>
+      <x>952</x>
       <y>288</y>
       <w>128</w>
       <h>64</h>
@@ -430,43 +434,43 @@ starts &gt;</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>496</x>
+      <x>752</x>
       <y>344</y>
-      <w>200</w>
+      <w>288</w>
       <h>96</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
 m2=1</panel_attributes>
-    <additional_attributes>10.0;100.0;10.0;50.0;230.0;50.0;230.0;10.0</additional_attributes>
+    <additional_attributes>10.0;100.0;10.0;50.0;340.0;50.0;340.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1200</x>
+      <x>1544</x>
       <y>496</y>
       <w>152</w>
       <h>32</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 &lt;&lt;uses&gt;&gt;</panel_attributes>
-    <additional_attributes>10.0;20.0;170.0;20.0</additional_attributes>
+    <additional_attributes>170.0;20.0;10.0;20.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1200</x>
+      <x>1544</x>
       <y>576</y>
       <w>152</w>
       <h>32</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 &lt;&lt;uses&gt;&gt;</panel_attributes>
-    <additional_attributes>10.0;20.0;170.0;20.0</additional_attributes>
+    <additional_attributes>170.0;20.0;10.0;20.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2032</x>
+      <x>2376</x>
       <y>520</y>
       <w>24</w>
       <h>96</h>
@@ -478,7 +482,7 @@ m2=1</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>760</x>
+      <x>1104</x>
       <y>288</y>
       <w>128</w>
       <h>64</h>
@@ -493,13 +497,135 @@ m2=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>496</x>
+      <x>752</x>
       <y>344</y>
-      <w>344</w>
+      <w>432</w>
       <h>96</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
 m2=1</panel_attributes>
-    <additional_attributes>10.0;100.0;10.0;50.0;410.0;50.0;410.0;10.0</additional_attributes>
+    <additional_attributes>10.0;100.0;10.0;50.0;520.0;50.0;520.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>576</x>
+      <y>296</y>
+      <w>112</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>_loadButton : JButton_
+--
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>616</x>
+      <y>320</y>
+      <w>160</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m2=1</panel_attributes>
+    <additional_attributes>180.0;130.0;180.0;80.0;10.0;80.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>448</x>
+      <y>296</y>
+      <w>120</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>_saveAsButton : JButton_
+--
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>496</x>
+      <y>320</y>
+      <w>280</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m2=1</panel_attributes>
+    <additional_attributes>330.0;130.0;330.0;80.0;10.0;80.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>328</x>
+      <y>296</y>
+      <w>112</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>_saveButton : JButton_
+--
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>368</x>
+      <y>320</y>
+      <w>408</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m2=1</panel_attributes>
+    <additional_attributes>490.0;130.0;490.0;80.0;10.0;80.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>48</x>
+      <y>504</y>
+      <w>112</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>GUIBuilder</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>152</x>
+      <y>504</y>
+      <w>496</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+creates &gt;
+m1=1</panel_attributes>
+    <additional_attributes>600.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1816</x>
+      <y>40</y>
+      <w>112</w>
+      <h>264</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+gets_data_from ^</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;310.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1736</x>
+      <y>24</y>
+      <w>184</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>???</panel_attributes>
+    <additional_attributes/>
   </element>
 </diagram>
